@@ -51,7 +51,7 @@ in {
           ExecStart = "${cfg.package}/bin/lorri daemon";
           PrivateTmp = true;
           ProtectSystem = "strict";
-          ProtectHome = "read-only";
+          ProtectHome = "false"; # lorri needs to write in the home directory
           Restart = "on-failure";
           Environment = let
             path = with pkgs;
